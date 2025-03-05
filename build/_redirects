@@ -1,0 +1,4 @@
+# Ensure API calls are not redirected to index.html
+/api/*   /.netlify/functions/:splat   200
+# Catch-all rule for SPA
+/*    /index.html   200
