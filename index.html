@@ -128,6 +128,14 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .hero h1 {
@@ -333,22 +341,52 @@
             margin-bottom: 5px;
         }
         
-        .feature-text p {
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .step {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: #00aaff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .step-content h3 {
+            color: #0b3b6d;
+            margin-bottom: 10px;
+        }
+        
+        .step-content p {
             color: #6c757d;
-            font-size: 16px;
-            margin-bottom: 0;
-        }
-        
-        .features-image {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-        }
-        
-        .features-img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
         
         /* Stats Section */
@@ -712,8 +750,8 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Global Shipping Solutions for the Modern World</h1>
-            <p>Reliable, efficient, and sustainable logistics services tailored to your business needs</p>
+            <h1>US to Haiti Air Shipping Specialists</h1>
+            <p>Ship your packages to our Naples, Florida hub from anywhere in the US for fast delivery to Port-au-Prince and Cap-Haïtien</p>
             <div class="hero-btns">
                 <a href="#services" class="btn">
                     <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 6px; position: relative; top: 2px;">
@@ -730,76 +768,124 @@
             </div>
         </div>
         
-        <!-- SVG Ship Illustration -->
-        <svg width="600" height="300" viewBox="0 0 800 400" style="position: absolute; bottom: 0; opacity: 0.1; left: 50%; transform: translateX(-50%);">
-            <path d="M50,250 L200,250 L250,200 L600,200 L650,250 L750,250 L750,300 L50,300 Z" fill="#ffffff"/>
-            <rect x="300" y="100" width="300" height="100" fill="#ffffff"/>
-            <rect x="350" y="50" width="200" height="50" fill="#ffffff"/>
-            <path d="M400,50 L450,20 L500,50" fill="none" stroke="#ffffff" stroke-width="5"/>
-            <circle cx="450" cy="20" r="10" fill="#ffffff"/>
-            <rect x="400" y="150" width="30" height="30" fill="#0b3b6d"/>
-            <rect x="450" y="150" width="30" height="30" fill="#0b3b6d"/>
-            <rect x="500" y="150" width="30" height="30" fill="#0b3b6d"/>
-            <path d="M50,300 C200,350 600,350 750,300" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="10,5"/>
+        <!-- SVG Naples to Haiti Illustration -->
+        <svg width="600" height="300" viewBox="0 0 800 400" style="position: absolute; bottom: 0; opacity: 0.15; left: 50%; transform: translateX(-50%);">
+            <!-- Florida peninsula simplified -->
+            <path d="M250,100 C270,110 280,130 275,150 C270,170 260,190 265,210 C270,230 290,240 280,260 C270,280 250,290 230,280 C210,270 200,250 190,230 C180,210 170,180 180,160 C190,140 210,120 230,110 C240,105 245,100 250,100 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+            
+            <!-- Naples dot -->
+            <circle cx="230" cy="230" r="8" fill="#00aaff"/>
+            
+            <!-- Haiti simplified -->
+            <path d="M500,180 C510,170 520,165 535,170 C550,175 560,170 565,160 C570,150 580,155 590,160 C600,165 610,155 615,165 C620,175 615,190 610,200 C605,210 600,220 590,225 C580,230 570,240 560,235 C550,230 535,235 525,230 C515,225 500,220 495,210 C490,200 490,190 500,180 Z" fill="#ffffff" stroke="#ffffff" stroke-width="2"/>
+            
+            <!-- PAP dot -->
+            <circle cx="540" cy="210" r="6" fill="#00aaff"/>
+            <!-- CAP dot -->
+            <circle cx="560" cy="175" r="6" fill="#00aaff"/>
+            
+            <!-- Labels -->
+            <text x="220" y="260" fill="#ffffff" font-size="14" text-anchor="middle">Naples</text>
+            <text x="540" y="230" fill="#ffffff" font-size="14" text-anchor="middle">PAP</text>
+            <text x="560" y="160" fill="#ffffff" font-size="14" text-anchor="middle">CAP</text>
+            
+            <!-- Airplane 1 -->
+            <g transform="translate(340, 180) rotate(15)">
+                <path d="M0,0 L30,-10 L50,0 L30,10 Z" fill="#ffffff"/>
+                <path d="M50,0 L80,-5 L90,0 L80,5 Z" fill="#ffffff"/>
+                <path d="M10,-15 L30,-10 L10,-5 Z" fill="#ffffff"/>
+                <path d="M20,10 L30,0 L40,10 L30,30 Z" fill="#ffffff"/>
+            </g>
+            
+            <!-- Flight Path with dots -->
+            <path d="M230,230 Q350,180 540,210" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="8,4"/>
+            <path d="M230,230 Q350,150 560,175" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="8,4"/>
+            
+            <!-- Package symbols -->
+            <rect x="180" y="220" width="20" height="20" fill="#ffffff" stroke="#00aaff" stroke-width="2"/>
+            <rect x="190" y="210" width="15" height="15" fill="#ffffff" stroke="#00aaff" stroke-width="2"/>
         </svg>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
-                <h2>Our Services</h2>
-                <p>Comprehensive shipping and logistics solutions designed to meet your unique requirements</p>
+                            <div class="section-header">
+                <h2>Our Specialized Services</h2>
+                <p>Send your packages to our Naples, Florida hub and we'll handle the rest</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Ocean Freight" class="service-img">
+                    <div class="service-icon-container">
+                        <svg width="100" height="100" viewBox="0 0 24 24">
+                            <path fill="#00aaff" d="M22,16v-2l-8.5-5V3.5C13.5,2.67,12.83,2,12,2s-1.5,0.67-1.5,1.5V9L2,14v2l8.5-2.5V19L8,20.5L8,22l4-1l4,1l0-1.5 L13.5,19v-5.5L22,16z"/>
+                        </svg>
+                    </div>
                     <div class="service-content">
-                        <h3>Ocean Freight</h3>
-                        <p>Efficient and cost-effective sea transport solutions for shipments of all sizes, with global port coverage and specialized container options.</p>
+                        <h3>US to Port-au-Prince (PAP)</h3>
+                        <p>Direct air freight service to Haiti's capital with 2-3 day delivery, customs clearance assistance, and door-to-door options from any US location.</p>
+                        <a href="#" class="service-link">Get Rates <span>→</span></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <svg width="100" height="100" viewBox="0 0 24 24">
+                            <path fill="#00aaff" d="M22,16v-2l-8.5-5V3.5C13.5,2.67,12.83,2,12,2s-1.5,0.67-1.5,1.5V9L2,14v2l8.5-2.5V19L8,20.5L8,22l4-1l4,1l0-1.5 L13.5,19v-5.5L22,16z"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>US to Cap-Haïtien (CAP)</h3>
+                        <p>Scheduled air freight service to northern Haiti with real-time tracking, insurance options, and comprehensive delivery solutions from any US city.</p>
+                        <a href="#" class="service-link">Get Rates <span>→</span></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-container">
+                        <svg width="100" height="100" viewBox="0 0 24 24">
+                            <path fill="#00aaff" d="M20,8h-3V4H3C1.9,4,1,4.9,1,6v12c0,1.1,0.9,2,2,2h18c1.1,0,2-0.9,2-2V10C23,8.9,22.1,8,20,8z M20,18H4V6h12v2H8v2 h12V18z M10,12.73V16h4v-3.27L16,9h-5l2,3.73z"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Express Document Service</h3>
+                        <p>Dedicated 24-hour service for urgent documents and small packages to both Port-au-Prince and Cap-Haïtien with priority handling.</p>
                         <a href="#" class="service-link">Learn More <span>→</span></a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Air Freight" class="service-img">
+                    <div class="service-icon-container">
+                        <svg width="100" height="100" viewBox="0 0 24 24">
+                            <path fill="#00aaff" d="M20.57,14.86L22,13.43L20.57,12L17,15.57L8.43,7L12,3.43L10.57,2L9.14,3.43L7.71,2L5.57,4.14L4.14,2.71L2.71,4.14l1.43,1.43 L2,7.71l1.43,1.43L2,10.57L3.43,12L7,8.43L15.57,17L12,20.57L13.43,22l1.43-1.43L16.29,22l2.14-2.14l1.43,1.43l1.43-1.43 l-1.43-1.43L22,16.29L20.57,14.86z"/>
+                        </svg>
+                    </div>
                     <div class="service-content">
-                        <h3>Air Freight</h3>
-                        <p>Express delivery services for time-sensitive cargo, with door-to-door options and real-time tracking for complete peace of mind.</p>
+                        <h3>Customs Clearance</h3>
+                        <p>Expert assistance with Haitian customs regulations, documentation preparation, and expedited clearance for commercial and personal shipments.</p>
                         <a href="#" class="service-link">Learn More <span>→</span></a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Road Transport" class="service-img">
+                    <div class="service-icon-container">
+                        <svg width="100" height="100" viewBox="0 0 24 24">
+                            <path fill="#00aaff" d="M18.36,9l0.6,3H5.04l0.6-3H18.36 M20,4H4v2h16V4z M20,7H4l-1,5v2h1v6h10v-6h4v6h2v-6h1v-2L20,7z M6,18v-4h6v4H6z"/>
+                        </svg>
+                    </div>
                     <div class="service-content">
-                        <h3>Road Transport</h3>
-                        <p>Reliable ground transportation with extensive fleet options, efficient route planning, and last-mile delivery services.</p>
-                        <a href="#" class="service-link">Learn More <span>→</span></a>
+                        <h3>Package Forwarding</h3>
+                        <p>Ship your packages to our Naples, Florida address from anywhere in the US, and we'll consolidate and forward them to Haiti on the next available flight.</p>
+                        <a href="#" class="service-link">Get Your Shipping Address <span>→</span></a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Warehousing" class="service-img">
-                    <div class="service-content">
-                        <h3>Warehousing</h3>
-                        <p>State-of-the-art storage facilities with inventory management systems, order fulfillment services, and distribution solutions.</p>
-                        <a href="#" class="service-link">Learn More <span>→</span></a>
+                    <div class="service-icon-container">
+                        <svg width="100" height="100" viewBox="0 0 24 24">
+                            <path fill="#00aaff" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,16.5c-2.49,0-4.5-2.01-4.5-4.5 S9.51,7.5,12,7.5s4.5,2.01,4.5,4.5S14.49,16.5,12,16.5z"/>
+                            <path fill="#00aaff" d="M12,9c-1.66,0-3,1.34-3,3s1.34,3,3,3s3-1.34,3-3S13.66,9,12,9z"/>
+                        </svg>
                     </div>
-                </div>
-                <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Supply Chain" class="service-img">
                     <div class="service-content">
-                        <h3>Supply Chain Solutions</h3>
-                        <p>End-to-end supply chain management with customized logistics strategies, optimization analysis, and continuous improvement.</p>
-                        <a href="#" class="service-link">Learn More <span>→</span></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Customs Brokerage" class="service-img">
-                    <div class="service-content">
-                        <h3>Customs Brokerage</h3>
-                        <p>Expert customs clearance services with compliance expertise, documentation support, and duty/tax management.</p>
-                        <a href="#" class="service-link">Learn More <span>→</span></a>
-                    </div>
-                </div>
+                        <h3>Shipment Tracking</h3>
+                        <p>Advanced real-time tracking technology with SMS and email notifications for every stage of your Haiti-bound shipment from pickup to delivery.</p>
+                        <a href
             </div>
         </div>
     </section>
@@ -808,28 +894,28 @@
     <section class="features" id="about">
         <div class="container features-container">
             <div class="features-content">
-                <h2>Why Choose ZX Shipping?</h2>
-                <p>We combine innovative technology with decades of logistics expertise to provide exceptional shipping experiences.</p>
+                <h2>Why Choose ZX Shipping for Haiti?</h2>
+                <p>We specialize exclusively in US-to-Haiti air freight with expert local knowledge and established customs relationships.</p>
                 <ul class="feature-list">
                     <li class="feature-item">
                         <div class="feature-icon">✓</div>
                         <div class="feature-text">
-                            <h3>Global Network</h3>
-                            <p>With operations in over 150 countries, we offer true global coverage with local expertise.</p>
+                            <h3>Haiti Specialists</h3>
+                            <p>With over 15 years of experience shipping to Haiti, we offer unmatched expertise in local regulations and customs procedures.</p>
                         </div>
                     </li>
                     <li class="feature-item">
                         <div class="feature-icon">✓</div>
                         <div class="feature-text">
-                            <h3>Real-Time Tracking</h3>
-                            <p>Monitor your shipments 24/7 with our advanced tracking system and mobile app.</p>
+                            <h3>Convenient Forwarding Service</h3>
+                            <p>Ship to our Naples, Florida address from anywhere in the US and we'll handle the international leg to Haiti for you.</p>
                         </div>
                     </li>
                     <li class="feature-item">
                         <div class="feature-icon">✓</div>
                         <div class="feature-text">
-                            <h3>Sustainability Focus</h3>
-                            <p>Committed to reducing our carbon footprint through eco-friendly practices and technologies.</p>
+                            <h3>Haiti Relief Support</h3>
+                            <p>Special rates and expedited service for humanitarian aid and disaster relief shipments to Haiti.</p>
                         </div>
                     </li>
                     <li class="feature-item">
@@ -841,8 +927,30 @@
                     </li>
                 </ul>
             </div>
-            <div class="features-image">
-                <img src="/api/placeholder/600/400" alt="ZX Shipping Features" class="features-img">
+            <h2>How It Works</h2>
+            <p>Simple 3-step process to ship your packages to Haiti</p>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Ship to Our Florida Address</h3>
+                        <p>Send your packages from anywhere in the US to our processing center in Naples, Florida</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>We Process Your Shipment</h3>
+                        <p>We handle all customs documentation and prepare your package for international shipping</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Delivery to Haiti</h3>
+                        <p>Your package is delivered directly to Port-au-Prince or Cap-Haïtien via our next scheduled flight</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -851,20 +959,20 @@
     <section class="stats">
         <div class="container stats-container">
             <div class="stat-item">
-                <h3>150+</h3>
-                <p>Countries Served</p>
+                <h3>50+</h3>
+                <p>US Cities Serviced</p>
             </div>
             <div class="stat-item">
-                <h3>25M+</h3>
-                <p>Shipments Yearly</p>
+                <h3>42K+</h3>
+                <p>Haiti Shipments Yearly</p>
             </div>
             <div class="stat-item">
-                <h3>98.7%</h3>
+                <h3>99.1%</h3>
                 <p>On-Time Delivery</p>
             </div>
             <div class="stat-item">
-                <h3>5,000+</h3>
-                <p>Satisfied Clients</p>
+                <h3>3,800+</h3>
+                <p>Regular Haiti Clients</p>
             </div>
         </div>
     </section>
@@ -879,13 +987,13 @@
             <div class="testimonial-container">
                 <div class="testimonial-slide">
                     <div class="testimonial-text">
-                        ZX Shipping has completely transformed our logistics operations. Their reliable service and innovative solutions have helped us reduce costs by 22% while improving delivery times. We couldn't be happier with our partnership.
+                        ZX Shipping has been our exclusive partner for sending medical supplies to our clinic in Port-au-Prince for over 5 years. Their knowledge of Haitian customs procedures and reliable air service has been invaluable to our operations, especially during emergency situations.
                     </div>
                     <div class="testimonial-author">
                         <img src="/api/placeholder/60/60" alt="Client" class="author-img">
                         <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Supply Chain Director, TechGlobal Inc.</p>
+                            <h4>Dr. Marie Laurent</h4>
+                            <p>Director, Haiti Health Initiative</p>
                         </div>
                     </div>
                 </div>
@@ -896,13 +1004,13 @@
     <!-- CTA Section -->
     <section class="cta" id="contact">
         <div class="container">
-            <h2>Ready to Optimize Your Shipping?</h2>
-            <p>Get a free quote and discover how ZX Shipping can transform your logistics operations</p>
+            <h2>Ready to Ship to Haiti?</h2>
+            <p>Get your personal US forwarding address in Naples, Florida</p>
             <div class="form-container">
                 <form action="#" method="POST">
                     <div class="form-group">
                         <input type="email" class="form-input" placeholder="Enter your email" required>
-                        <button type="submit" class="form-btn">Get a Quote</button>
+                        <button type="submit" class="form-btn">Get My Shipping Address</button>
                     </div>
                 </form>
             </div>
@@ -914,7 +1022,7 @@
         <div class="container footer-container">
             <div class="footer-col footer-about">
                 <h3>About ZX Shipping</h3>
-                <p>ZX Shipping is a global logistics provider dedicated to delivering innovative shipping solutions. With our extensive network and industry expertise, we help businesses of all sizes optimize their supply chains.</p>
+                <p>ZX Shipping is a specialized air freight provider based in Naples, Florida, dedicated exclusively to shipping from the United States to Haiti. Ship your packages to our Florida address from anywhere in the US, and we'll forward them to Port-au-Prince or Cap-Haïtien on our regular flights. With over 15 years of experience on this specific route, we offer unmatched expertise in navigating Haitian customs.</p>
                 <div class="social-links">
                     <a href="#" class="social-link">f</a>
                     <a href="#" class="social-link">t</a>
@@ -936,19 +1044,19 @@
             <div class="footer-col footer-links">
                 <h3>Services</h3>
                 <ul>
-                    <li><a href="#">Ocean Freight</a></li>
-                    <li><a href="#">Air Freight</a></li>
-                    <li><a href="#">Road Transport</a></li>
-                    <li><a href="#">Warehousing</a></li>
-                    <li><a href="#">Supply Chain Solutions</a></li>
-                    <li><a href="#">Customs Brokerage</a></li>
+                    <li><a href="#">US to Port-au-Prince</a></li>
+                    <li><a href="#">US to Cap-Haïtien</a></li>
+                    <li><a href="#">Express Document Service</a></li>
+                    <li><a href="#">Customs Clearance</a></li>
+                    <li><a href="#">Documentation Support</a></li>
+                    <li><a href="#">Humanitarian Shipments</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h3>Contact Us</h3>
-                <div class="contact-info">
+                                    <div class="contact-info">
                     <div class="contact-icon">📍</div>
-                    <div class="contact-text">123 Shipping Avenue, Harbor City, 10001, USA</div>
+                    <div class="contact-text">1250 Aviation Drive, Suite 105, Naples, Florida 34104, USA</div>
                 </div>
                 <div class="contact-info">
                     <div class="contact-icon">📞</div>
