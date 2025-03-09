@@ -3,720 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZX Shipping | Global Logistics Solutions</title>
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            position: fixed;
-            width: 100%;
-            background-color: #ffffff;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-text {
-            font-size: 28px;
-            font-weight: 800;
-            color: #0b3b6d;
-            letter-spacing: -0.5px;
-        }
-        
-        .logo-highlight {
-            color: #00aaff;
-            font-weight: 900;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            font-weight: 600;
-            position: relative;
-            padding: 8px 12px;
-            transition: all 0.3s;
-            border-radius: 6px;
-        }
-        
-        nav ul li a:hover {
-            color: #00aaff;
-            background-color: rgba(0, 170, 255, 0.08);
-        }
-        
-        nav ul li a.active {
-            color: #00aaff;
-            background-color: rgba(0, 170, 255, 0.12);
-        }
-        
-        .menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #0b3b6d;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(11, 59, 109, 0.95), rgba(0, 150, 224, 0.8));
-            display: flex;
-            align-items: center;
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='smallGrid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23smallGrid)'/%3E%3C/svg%3E");
-            opacity: 0.4;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #00aaff;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 0 10px;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(0, 170, 255, 0.25);
-            background-color: #0095e0;
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-        }
-        
-        .btn-outline:hover {
-            background-color: white;
-            color: #0b3b6d;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            background-color: #f8f9fa;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-header h2 {
-            font-size: 36px;
-            color: #0b3b6d;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 3px;
-            background-color: #00aaff;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .section-header p {
-            color: #6c757d;
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-            border-color: rgba(0, 170, 255, 0.2);
-        }
-        
-        .service-icon-container {
-            height: 180px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(0, 170, 255, 0.05);
-            padding: 30px;
-        }
-        
-        .service-content {
-            padding: 25px;
-        }
-        
-        .service-content h3 {
-            font-size: 22px;
-            color: #0b3b6d;
-            margin-bottom: 15px;
-        }
-        
-        .service-content p {
-            color: #6c757d;
-            margin-bottom: 20px;
-        }
-        
-        .service-link {
-            color: #00aaff;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .service-link span {
-            margin-left: 5px;
-            transition: transform 0.3s ease;
-        }
-        
-        .service-link:hover span {
-            transform: translateX(5px);
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-        }
-        
-        .features-container {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .features-content {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 50px;
-        }
-        
-        .features-content h2 {
-            font-size: 36px;
-            color: #0b3b6d;
-            margin-bottom: 20px;
-        }
-        
-        .features-content p {
-            color: #6c757d;
-            margin-bottom: 30px;
-            font-size: 18px;
-        }
-        
-        .feature-list {
-            list-style: none;
-        }
-        
-        .feature-item {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .feature-icon {
-            margin-right: 15px;
-            width: 50px;
-            height: 50px;
-            background-color: rgba(0, 170, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            color: #00aaff;
-            font-size: 20px;
-        }
-        
-        .feature-text h3 {
-            font-size: 20px;
-            color: #0b3b6d;
-            margin-bottom: 5px;
-        }
-        
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .step {
-            background-color: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background-color: #00aaff;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .step-content h3 {
-            color: #0b3b6d;
-            margin-bottom: 10px;
-        }
-        
-        .step-content p {
-            color: #6c757d;
-        }
-        
-        /* Stats Section */
-        .stats {
-            padding: 80px 0;
-            background-color: #0b3b6d;
-            color: white;
-        }
-        
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-        
-        .stat-item h3 {
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #00aaff;
-        }
-        
-        .stat-item p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            padding: 100px 0;
-            background-color: #f8f9fa;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .testimonial-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .testimonial-slide {
-            background-color: white;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-        
-        .testimonial-text {
-            font-size: 18px;
-            color: #6c757d;
-            margin-bottom: 30px;
-            position: relative;
-            padding: 0 20px;
-        }
-        
-        .testimonial-text::before,
-        .testimonial-text::after {
-            content: '"';
-            font-size: 60px;
-            color: #00aaff;
-            opacity: 0.2;
-            position: absolute;
-            line-height: 0;
-        }
-        
-        .testimonial-text::before {
-            top: 15px;
-            left: -10px;
-        }
-        
-        .testimonial-text::after {
-            bottom: 0;
-            right: -10px;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .author-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-        }
-        
-        .author-info h4 {
-            font-size: 18px;
-            color: #0b3b6d;
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            color: #6c757d;
-            font-size: 14px;
-        }
-        
-        /* CTA Section */
-        .cta {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #0b3b6d, #00aaff);
-            color: white;
-            text-align: center;
-        }
-        
-        .cta h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .cta p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-        }
-        
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        
-        .form-input {
-            flex: 1;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 30px 0 0 30px;
-            font-size: 16px;
-            outline: none;
-        }
-        
-        .form-btn {
-            background-color: #0b3b6d;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 0 30px 30px 0;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .form-btn:hover {
-            background-color: #072a4d;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #0a2d4e;
-            color: white;
-            padding: 70px 0 0;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .footer-col h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background-color: #00aaff;
-        }
-        
-        .footer-about p {
-            margin-bottom: 20px;
-            opacity: 0.8;
-            line-height: 1.8;
-        }
-        
-        .social-links {
-            display: flex;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background-color: #00aaff;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links ul li {
-            margin-bottom: 15px;
-        }
-        
-        .footer-links ul li a {
-            opacity: 0.8;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            display: inline-block;
-        }
-        
-        .footer-links ul li a:hover {
-            opacity: 1;
-            transform: translateX(5px);
-            color: #00aaff;
-        }
-        
-        .contact-info {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .contact-icon {
-            margin-right: 15px;
-            opacity: 0.8;
-        }
-        
-        .contact-text {
-            opacity: 0.8;
-            line-height: 1.8;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
-            font-size: 14px;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .features-content {
-                padding-right: 0;
-                margin-bottom: 50px;
-            }
-            
-            .features-container {
-                flex-direction: column;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 10px 0;
-            }
-            
-            .menu-btn {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .section-header h2 {
-                font-size: 30px;
-            }
-            
-            .section-header p {
-                font-size: 16px;
-            }
-            
-            .form-group {
-                flex-direction: column;
-            }
-            
-            .form-input, .form-btn {
-                width: 100%;
-                border-radius: 30px;
-            }
-            
-            .form-input {
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+    <title>ZX Shipping | US to Haiti Air Freight Specialists</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <div class="language-option active" data-lang="en">
+            <span class="language-flag">🇺🇸</span>
+            EN
+        </div>
+        <div class="language-option" data-lang="fr">
+            <span class="language-flag">🇫🇷</span>
+            FR
+        </div>
+        <div class="language-option" data-lang="ht">
+            <span class="language-flag">🇭🇹</span>
+            HT
+        </div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -730,16 +36,40 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="/build/index.html">Login</a></li>
-                    <li><a href="#track" class="btn">
+                    <!-- English Navigation -->
+                    <li lang="en" class="active"><a href="#home" class="active">Home</a></li>
+                    <li lang="en" class="active"><a href="#services">Services</a></li>
+                    <li lang="en" class="active"><a href="#about">About</a></li>
+                    <li lang="en" class="active"><a href="#contact">Contact</a></li>
+                    <li lang="en" class="active"><a href="#track" class="btn">
                         <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 6px; position: relative; top: 2px;">
                             <path fill="white" d="M12,2C8.13,2,5,5.13,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z"/>
                         </svg>
                         Track Shipment
+                    </a></li>
+                    
+                    <!-- French Navigation -->
+                    <li lang="fr"><a href="#home" class="active">Accueil</a></li>
+                    <li lang="fr"><a href="#services">Services</a></li>
+                    <li lang="fr"><a href="#about">À Propos</a></li>
+                    <li lang="fr"><a href="#contact">Contact</a></li>
+                    <li lang="fr"><a href="#track" class="btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 6px; position: relative; top: 2px;">
+                            <path fill="white" d="M12,2C8.13,2,5,5.13,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z"/>
+                        </svg>
+                        Suivi Colis
+                    </a></li>
+                    
+                    <!-- Haitian Creole Navigation -->
+                    <li lang="ht"><a href="#home" class="active">Akèy</a></li>
+                    <li lang="ht"><a href="#services">Sèvis</a></li>
+                    <li lang="ht"><a href="#about">Enfòmasyon</a></li>
+                    <li lang="ht"><a href="#contact">Kontakte</a></li>
+                    <li lang="ht"><a href="#track" class="btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 6px; position: relative; top: 2px;">
+                            <path fill="white" d="M12,2C8.13,2,5,5.13,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z"/>
+                        </svg>
+                        Swiv Pake
                     </a></li>
                 </ul>
                 <button class="menu-btn">☰</button>
@@ -750,20 +80,59 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>US to Haiti Air Shipping Specialists</h1>
-            <p>Ship your packages to our Naples, Florida hub from anywhere in the US for fast delivery to Port-au-Prince and Cap-Haïtien</p>
+            <!-- English Content -->
+            <h1 lang="en" class="active">US to Haiti Air Shipping Specialists</h1>
+            <p lang="en" class="active">Ship your packages to our Naples, Florida hub from anywhere in the US for fast delivery to Port-au-Prince and Cap-Haïtien</p>
+            
+            <!-- French Content -->
+            <h1 lang="fr">Spécialistes du Transport Aérien des États-Unis vers Haïti</h1>
+            <p lang="fr">Expédiez vos colis à notre centre de Naples, Floride depuis n'importe où aux États-Unis pour une livraison rapide à Port-au-Prince et Cap-Haïtien</p>
+            
+            <!-- Haitian Creole Content -->
+            <h1 lang="ht">Ekspè nan Ekspedisyon Pa Avyon Soti nan Etazini Pou Ayiti</h1>
+            <p lang="ht">Voye pake ou yo nan sant nou an Naples, Florid soti nenpòt kote nan Etazini pou livrezon rapid nan Pòtoprens ak Okap</p>
+            
             <div class="hero-btns">
-                <a href="#services" class="btn">
+                <!-- English Buttons -->
+                <a href="#services" class="btn" lang="en" class="active">
                     <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 6px; position: relative; top: 2px;">
-                        <path fill="white" d="M20.54,5.23l-1.39-1.68C18.88,3.21,18.47,3,18,3H6C5.53,3,5.12,3.21,4.84,3.55L3.46,5.23C3.17,5.57,3,6.02,3,6.5V19c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V6.5C21,6.02,20.83,5.57,20.54,5.23z M12,17.5L6.5,12H10v-2h4v2h3.5L12,17.5z M5.12,5l0.81-1h12l0.94,1H5.12z"/>
+                        <path fill="white" d="M20,8h-3V4H3C1.9,4,1,4.9,1,6v12c0,1.1,0.9,2,2,2h18c1.1,0,2-0.9,2-2V10C23,8.9,22.1,8,20,8z M20,18H4V6h12v2H8v2 h12V18z M10,12.73V16h4v-3.27L16,9h-5l2,3.73z"/>
                     </svg>
                     Our Services
                 </a>
-                <a href="#contact" class="btn btn-outline">
+                <a href="#contact" class="btn btn-outline" lang="en" class="active">
                     <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 6px; position: relative; top: 2px;">
                         <path fill="white" d="M20,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,8l-8,4.99L4,8V6l8,5l8-5V8z"/>
                     </svg>
                     Get a Quote
+                </a>
+                
+                <!-- French Buttons -->
+                <a href="#services" class="btn" lang="fr">
+                    <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 6px; position: relative; top: 2px;">
+                        <path fill="white" d="M20,8h-3V4H3C1.9,4,1,4.9,1,6v12c0,1.1,0.9,2,2,2h18c1.1,0,2-0.9,2-2V10C23,8.9,22.1,8,20,8z M20,18H4V6h12v2H8v2 h12V18z M10,12.73V16h4v-3.27L16,9h-5l2,3.73z"/>
+                    </svg>
+                    Nos Services
+                </a>
+                <a href="#contact" class="btn btn-outline" lang="fr">
+                    <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 6px; position: relative; top: 2px;">
+                        <path fill="white" d="M20,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,8l-8,4.99L4,8V6l8,5l8-5V8z"/>
+                    </svg>
+                    Obtenir un Devis
+                </a>
+                
+                <!-- Haitian Creole Buttons -->
+                <a href="#services" class="btn" lang="ht">
+                    <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 6px; position: relative; top: 2px;">
+                        <path fill="white" d="M20,8h-3V4H3C1.9,4,1,4.9,1,6v12c0,1.1,0.9,2,2,2h18c1.1,0,2-0.9,2-2V10C23,8.9,22.1,8,20,8z M20,18H4V6h12v2H8v2 h12V18z M10,12.73V16h4v-3.27L16,9h-5l2,3.73z"/>
+                    </svg>
+                    Sèvis Nou Yo
+                </a>
+                <a href="#contact" class="btn btn-outline" lang="ht">
+                    <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 6px; position: relative; top: 2px;">
+                        <path fill="white" d="M20,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,8l-8,4.99L4,8V6l8,5l8-5V8z"/>
+                    </svg>
+                    Jwenn yon Estimasyon
                 </a>
             </div>
         </div>
@@ -810,82 +179,21 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-                            <div class="section-header">
-                <h2>Our Specialized Services</h2>
-                <p>Send your packages to our Naples, Florida hub and we'll handle the rest</p>
+            <div class="section-header">
+                <!-- English -->
+                <h2 lang="en" class="active">Our Specialized Services</h2>
+                <p lang="en" class="active">Send your packages to our Naples, Florida hub and we'll handle the rest</p>
+                
+                <!-- French -->
+                <h2 lang="fr">Nos Services Spécialisés</h2>
+                <p lang="fr">Envoyez vos colis à notre hub de Naples en Floride et nous nous occupons du reste</p>
+                
+                <!-- Haitian Creole -->
+                <h2 lang="ht">Sèvis Espesyalize Nou yo</h2>
+                <p lang="ht">Voye pake ou yo nan sant nou nan Naples, Florid epi n ap okipe rès la</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon-container">
-                        <svg width="100" height="100" viewBox="0 0 24 24">
-                            <path fill="#00aaff" d="M22,16v-2l-8.5-5V3.5C13.5,2.67,12.83,2,12,2s-1.5,0.67-1.5,1.5V9L2,14v2l8.5-2.5V19L8,20.5L8,22l4-1l4,1l0-1.5 L13.5,19v-5.5L22,16z"/>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>US to Port-au-Prince (PAP)</h3>
-                        <p>Direct air freight service to Haiti's capital with 2-3 day delivery, customs clearance assistance, and door-to-door options from any US location.</p>
-                        <a href="#" class="service-link">Get Rates <span>→</span></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon-container">
-                        <svg width="100" height="100" viewBox="0 0 24 24">
-                            <path fill="#00aaff" d="M22,16v-2l-8.5-5V3.5C13.5,2.67,12.83,2,12,2s-1.5,0.67-1.5,1.5V9L2,14v2l8.5-2.5V19L8,20.5L8,22l4-1l4,1l0-1.5 L13.5,19v-5.5L22,16z"/>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>US to Cap-Haïtien (CAP)</h3>
-                        <p>Scheduled air freight service to northern Haiti with real-time tracking, insurance options, and comprehensive delivery solutions from any US city.</p>
-                        <a href="#" class="service-link">Get Rates <span>→</span></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon-container">
-                        <svg width="100" height="100" viewBox="0 0 24 24">
-                            <path fill="#00aaff" d="M20,8h-3V4H3C1.9,4,1,4.9,1,6v12c0,1.1,0.9,2,2,2h18c1.1,0,2-0.9,2-2V10C23,8.9,22.1,8,20,8z M20,18H4V6h12v2H8v2 h12V18z M10,12.73V16h4v-3.27L16,9h-5l2,3.73z"/>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>Express Document Service</h3>
-                        <p>Dedicated 24-hour service for urgent documents and small packages to both Port-au-Prince and Cap-Haïtien with priority handling.</p>
-                        <a href="#" class="service-link">Learn More <span>→</span></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon-container">
-                        <svg width="100" height="100" viewBox="0 0 24 24">
-                            <path fill="#00aaff" d="M20.57,14.86L22,13.43L20.57,12L17,15.57L8.43,7L12,3.43L10.57,2L9.14,3.43L7.71,2L5.57,4.14L4.14,2.71L2.71,4.14l1.43,1.43 L2,7.71l1.43,1.43L2,10.57L3.43,12L7,8.43L15.57,17L12,20.57L13.43,22l1.43-1.43L16.29,22l2.14-2.14l1.43,1.43l1.43-1.43 l-1.43-1.43L22,16.29L20.57,14.86z"/>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>Customs Clearance</h3>
-                        <p>Expert assistance with Haitian customs regulations, documentation preparation, and expedited clearance for commercial and personal shipments.</p>
-                        <a href="#" class="service-link">Learn More <span>→</span></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon-container">
-                        <svg width="100" height="100" viewBox="0 0 24 24">
-                            <path fill="#00aaff" d="M18.36,9l0.6,3H5.04l0.6-3H18.36 M20,4H4v2h16V4z M20,7H4l-1,5v2h1v6h10v-6h4v6h2v-6h1v-2L20,7z M6,18v-4h6v4H6z"/>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>Package Forwarding</h3>
-                        <p>Ship your packages to our Naples, Florida address from anywhere in the US, and we'll consolidate and forward them to Haiti on the next available flight.</p>
-                        <a href="#" class="service-link">Get Your Shipping Address <span>→</span></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon-container">
-                        <svg width="100" height="100" viewBox="0 0 24 24">
-                            <path fill="#00aaff" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,16.5c-2.49,0-4.5-2.01-4.5-4.5 S9.51,7.5,12,7.5s4.5,2.01,4.5,4.5S14.49,16.5,12,16.5z"/>
-                            <path fill="#00aaff" d="M12,9c-1.66,0-3,1.34-3,3s1.34,3,3,3s3-1.34,3-3S13.66,9,12,9z"/>
-                        </svg>
-                    </div>
-                    <div class="service-content">
-                        <h3>Shipment Tracking</h3>
-                        <p>Advanced real-time tracking technology with SMS and email notifications for every stage of your Haiti-bound shipment from pickup to delivery.</p>
-                        <a href
+            <div id="services-grid" class="services-grid">
+                <!-- Services will be loaded from JavaScript -->
             </div>
         </div>
     </section>
@@ -894,62 +202,35 @@
     <section class="features" id="about">
         <div class="container features-container">
             <div class="features-content">
-                <h2>Why Choose ZX Shipping for Haiti?</h2>
-                <p>We specialize exclusively in US-to-Haiti air freight with expert local knowledge and established customs relationships.</p>
-                <ul class="feature-list">
-                    <li class="feature-item">
-                        <div class="feature-icon">✓</div>
-                        <div class="feature-text">
-                            <h3>Haiti Specialists</h3>
-                            <p>With over 15 years of experience shipping to Haiti, we offer unmatched expertise in local regulations and customs procedures.</p>
-                        </div>
-                    </li>
-                    <li class="feature-item">
-                        <div class="feature-icon">✓</div>
-                        <div class="feature-text">
-                            <h3>Convenient Forwarding Service</h3>
-                            <p>Ship to our Naples, Florida address from anywhere in the US and we'll handle the international leg to Haiti for you.</p>
-                        </div>
-                    </li>
-                    <li class="feature-item">
-                        <div class="feature-icon">✓</div>
-                        <div class="feature-text">
-                            <h3>Haiti Relief Support</h3>
-                            <p>Special rates and expedited service for humanitarian aid and disaster relief shipments to Haiti.</p>
-                        </div>
-                    </li>
-                    <li class="feature-item">
-                        <div class="feature-icon">✓</div>
-                        <div class="feature-text">
-                            <h3>Dedicated Support</h3>
-                            <p>Personal account managers and 24/7 customer service for all your shipping needs.</p>
-                        </div>
-                    </li>
+                <!-- English -->
+                <h2 lang="en" class="active">Why Choose ZX Shipping for Haiti?</h2>
+                <p lang="en" class="active">We specialize exclusively in US-to-Haiti air freight with expert local knowledge and established customs relationships.</p>
+                
+                <!-- French -->
+                <h2 lang="fr">Pourquoi Choisir ZX Shipping pour Haïti?</h2>
+                <p lang="fr">Nous sommes spécialisés exclusivement dans le fret aérien des États-Unis vers Haïti avec une expertise locale et des relations douanières établies.</p>
+                
+                <!-- Haitian Creole -->
+                <h2 lang="ht">Poukisa Chwazi ZX Shipping pou Ayiti?</h2>
+                <p lang="ht">Nou espesyalize eksklizivman nan transpò ayeryen soti nan Etazini pou Ayiti avèk konesans lokal ekspè ak relasyon ladwàn etabli.</p>
+                
+                <ul id="feature-list" class="feature-list">
+                    <!-- Features will be loaded from JavaScript -->
                 </ul>
             </div>
-            <h2>How It Works</h2>
-            <p>Simple 3-step process to ship your packages to Haiti</p>
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Ship to Our Florida Address</h3>
-                        <p>Send your packages from anywhere in the US to our processing center in Naples, Florida</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>We Process Your Shipment</h3>
-                        <p>We handle all customs documentation and prepare your package for international shipping</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Delivery to Haiti</h3>
-                        <p>Your package is delivered directly to Port-au-Prince or Cap-Haïtien via our next scheduled flight</p>
-                    </div>
+            
+            <div class="container">
+                <h2 lang="en" class="active">How It Works</h2>
+                <p lang="en" class="active">Simple 3-step process to ship your packages to Haiti</p>
+                
+                <h2 lang="fr">Comment Ça Marche</h2>
+                <p lang="fr">Processus simple en 3 étapes pour expédier vos colis vers Haïti</p>
+                
+                <h2 lang="ht">Kijan Li Mache</h2>
+                <p lang="ht">Pwosesis senp 3-etap pou voye pake ou yo an Ayiti</p>
+                
+                <div id="steps-container" class="steps-container">
+                    <!-- Steps will be loaded from JavaScript -->
                 </div>
             </div>
         </div>
@@ -957,23 +238,8 @@
 
     <!-- Stats Section -->
     <section class="stats">
-        <div class="container stats-container">
-            <div class="stat-item">
-                <h3>50+</h3>
-                <p>US Cities Serviced</p>
-            </div>
-            <div class="stat-item">
-                <h3>42K+</h3>
-                <p>Haiti Shipments Yearly</p>
-            </div>
-            <div class="stat-item">
-                <h3>99.1%</h3>
-                <p>On-Time Delivery</p>
-            </div>
-            <div class="stat-item">
-                <h3>3,800+</h3>
-                <p>Regular Haiti Clients</p>
-            </div>
+        <div id="stats-container" class="container stats-container">
+            <!-- Stats will be loaded from JavaScript -->
         </div>
     </section>
 
@@ -981,22 +247,17 @@
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2>Client Testimonials</h2>
-                <p>See what our clients have to say about our services</p>
+                <h2 lang="en" class="active">Client Testimonials</h2>
+                <p lang="en" class="active">See what our clients have to say about our services</p>
+                
+                <h2 lang="fr">Témoignages de Clients</h2>
+                <p lang="fr">Découvrez ce que nos clients disent de nos services</p>
+                
+                <h2 lang="ht">Temwayaj Kliyan</h2>
+                <p lang="ht">Gade sa kliyan nou yo di sou sèvis nou yo</p>
             </div>
-            <div class="testimonial-container">
-                <div class="testimonial-slide">
-                    <div class="testimonial-text">
-                        ZX Shipping has been our exclusive partner for sending medical supplies to our clinic in Port-au-Prince for over 5 years. Their knowledge of Haitian customs procedures and reliable air service has been invaluable to our operations, especially during emergency situations.
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="/api/placeholder/60/60" alt="Client" class="author-img">
-                        <div class="author-info">
-                            <h4>Dr. Marie Laurent</h4>
-                            <p>Director, Haiti Health Initiative</p>
-                        </div>
-                    </div>
-                </div>
+            <div id="testimonials-container" class="testimonial-container">
+                <!-- Testimonials will be loaded from JavaScript -->
             </div>
         </div>
     </section>
@@ -1004,13 +265,22 @@
     <!-- CTA Section -->
     <section class="cta" id="contact">
         <div class="container">
-            <h2>Ready to Ship to Haiti?</h2>
-            <p>Get your personal US forwarding address in Naples, Florida</p>
+            <h2 lang="en" class="active">Ready to Ship to Haiti?</h2>
+            <p lang="en" class="active">Get your personal US forwarding address in Naples, Florida</p>
+            
+            <h2 lang="fr">Prêt à Expédier vers Haïti?</h2>
+            <p lang="fr">Obtenez votre adresse de transfert personnelle aux États-Unis à Naples, Floride</p>
+            
+            <h2 lang="ht">Prè pou Voye nan Ayiti?</h2>
+            <p lang="ht">Jwenn adrès transfè pèsonèl ou Ozetazini nan Naples, Florid</p>
+            
             <div class="form-container">
                 <form action="#" method="POST">
                     <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Enter your email" required>
-                        <button type="submit" class="form-btn">Get My Shipping Address</button>
+                        <input type="email" class="form-input" placeholder="Email" required>
+                        <button type="submit" class="form-btn" lang="en" class="active">Get My Shipping Address</button>
+                        <button type="submit" class="form-btn" lang="fr">Obtenir Mon Adresse d'Expédition</button>
+                        <button type="submit" class="form-btn" lang="ht">Jwenn Adrès Ekspedisyon Mwen</button>
                     </div>
                 </form>
             </div>
@@ -1021,8 +291,16 @@
     <footer>
         <div class="container footer-container">
             <div class="footer-col footer-about">
-                <h3>About ZX Shipping</h3>
-                <p>ZX Shipping is a specialized air freight provider based in Naples, Florida, dedicated exclusively to shipping from the United States to Haiti. Ship your packages to our Florida address from anywhere in the US, and we'll forward them to Port-au-Prince or Cap-Haïtien on our regular flights. With over 15 years of experience on this specific route, we offer unmatched expertise in navigating Haitian customs.</p>
+                <h3 lang="en" class="active">About ZX Shipping</h3>
+                <h3 lang="fr">À Propos de ZX Shipping</h3>
+                <h3 lang="ht">Enfòmasyon sou ZX Shipping</h3>
+                
+                <p lang="en" class="active">ZX Shipping is a specialized air freight provider based in Naples, Florida, dedicated exclusively to shipping from the United States to Haiti. Ship your packages to our Florida address from anywhere in the US, and we'll forward them to Port-au-Prince or Cap-Haïtien on our regular flights. With over 15 years of experience on this specific route, we offer unmatched expertise in navigating Haitian customs.</p>
+                
+                <p lang="fr">ZX Shipping est un fournisseur de fret aérien spécialisé basé à Naples, en Floride, dédié exclusivement à l'expédition des États-Unis vers Haïti. Expédiez vos colis à notre adresse en Floride de n'importe où aux États-Unis, et nous les transmettrons à Port-au-Prince ou Cap-Haïtien sur nos vols réguliers. Avec plus de 15 ans d'expérience sur cette route spécifique, nous offrons une expertise inégalée dans la navigation des douanes haïtiennes.</p>
+                
+                <p lang="ht">ZX Shipping se yon founisè transpò ayeryen espesyalize ki baze nan Naples, Florid, ki dedye eksklizivman pou ekspedisyon soti nan Etazini pou Ayiti. Voye pake ou yo nan adrès Florid nou an soti nenpòt kote nan Etazini, epi n ap voye yo nan Pòtoprens oswa Okap sou vòl regilye nou yo. Avèk plis pase 15 ane eksperyans sou wout espesifik sa a, nou ofri ekspertiz san parèy nan navige ladwàn ayisyen.</p>
+                
                 <div class="social-links">
                     <a href="#" class="social-link">f</a>
                     <a href="#" class="social-link">t</a>
@@ -1031,32 +309,73 @@
                 </div>
             </div>
             <div class="footer-col footer-links">
-                <h3>Quick Links</h3>
+                <h3 lang="en" class="active">Quick Links</h3>
+                <h3 lang="fr">Liens Rapides</h3>
+                <h3 lang="ht">Lyen Rapid</h3>
+                
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#track">Track Shipment</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="#home" lang="en" class="active">Home</a></li>
+                    <li><a href="#services" lang="en" class="active">Services</a></li>
+                    <li><a href="#about" lang="en" class="active">About Us</a></li>
+                    <li><a href="#track" lang="en" class="active">Track Shipment</a></li>
+                    <li><a href="#contact" lang="en" class="active">Contact Us</a></li>
+                    <li><a href="#" lang="en" class="active">Careers</a></li>
+                    
+                    <li><a href="#home" lang="fr">Accueil</a></li>
+                    <li><a href="#services" lang="fr">Services</a></li>
+                    <li><a href="#about" lang="fr">À Propos</a></li>
+                    <li><a href="#track" lang="fr">Suivi Colis</a></li>
+                    <li><a href="#contact" lang="fr">Contactez-nous</a></li>
+                    <li><a href="#" lang="fr">Carrières</a></li>
+                    
+                    <li><a href="#home" lang="ht">Akèy</a></li>
+                    <li><a href="#services" lang="ht">Sèvis</a></li>
+                    <li><a href="#about" lang="ht">Enfòmasyon</a></li>
+                    <li><a href="#track" lang="ht">Swiv Pake</a></li>
+                    <li><a href="#contact" lang="ht">Kontakte Nou</a></li>
+                    <li><a href="#" lang="ht">Karyè</a></li>
                 </ul>
             </div>
             <div class="footer-col footer-links">
-                <h3>Services</h3>
+                <h3 lang="en" class="active">Services</h3>
+                <h3 lang="fr">Services</h3>
+                <h3 lang="ht">Sèvis</h3>
+                
                 <ul>
-                    <li><a href="#">US to Port-au-Prince</a></li>
-                    <li><a href="#">US to Cap-Haïtien</a></li>
-                    <li><a href="#">Express Document Service</a></li>
-                    <li><a href="#">Customs Clearance</a></li>
-                    <li><a href="#">Documentation Support</a></li>
-                    <li><a href="#">Humanitarian Shipments</a></li>
+                    <li><a href="#" lang="en" class="active">US to Port-au-Prince</a></li>
+                    <li><a href="#" lang="en" class="active">US to Cap-Haïtien</a></li>
+                    <li><a href="#" lang="en" class="active">Express Document Service</a></li>
+                    <li><a href="#" lang="en" class="active">Customs Clearance</a></li>
+                    <li><a href="#" lang="en" class="active">Package Forwarding</a></li>
+                    <li><a href="#" lang="en" class="active">Humanitarian Shipments</a></li>
+                    
+                    <li><a href="#" lang="fr">USA vers Port-au-Prince</a></li>
+                    <li><a href="#" lang="fr">USA vers Cap-Haïtien</a></li>
+                    <li><a href="#" lang="fr">Service Express de Documents</a></li>
+                    <li><a href="#" lang="fr">Dédouanement</a></li>
+                    <li><a href="#" lang="fr">Transfert de Colis</a></li>
+                    <li><a href="#" lang="fr">Expéditions Humanitaires</a></li>
+                    
+                    <li><a href="#" lang="ht">Etazini pou Pòtoprens</a></li>
+                    <li><a href="#" lang="ht">Etazini pou Okap</a></li>
+                    <li><a href="#" lang="ht">Sèvis Dokiman Eksprès</a></li>
+                    <li><a href="#" lang="ht">Dedwanman</a></li>
+                    <li><a href="#" lang="ht">Transfè Pake</a></li>
+                    <li><a href="#" lang="ht">Ekspedisyon Imanitè</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h3>Contact Us</h3>
-                                    <div class="contact-info">
+                <h3 lang="en" class="active">Contact Us</h3>
+                <h3 lang="fr">Contactez-nous</h3>
+                <h3 lang="ht">Kontakte Nou</h3>
+                
+                <div class="contact-info">
                     <div class="contact-icon">📍</div>
-                    <div class="contact-text">1250 Aviation Drive, Suite 105, Naples, Florida 34104, USA</div>
+                    <div class="contact-text">
+                        <span lang="en" class="active">1250 Aviation Drive, Suite 105, Naples, Florida 34104, USA</span>
+                        <span lang="fr">1250 Aviation Drive, Suite 105, Naples, Floride 34104, États-Unis</span>
+                        <span lang="ht">1250 Aviation Drive, Suite 105, Naples, Florid 34104, Etazini</span>
+                    </div>
                 </div>
                 <div class="contact-info">
                     <div class="contact-icon">📞</div>
@@ -1069,76 +388,20 @@
             </div>
         </div>
         <div class="copyright">
-            &copy; 2025 ZX Shipping. All Rights Reserved.
+            <span lang="en" class="active">&copy; 2025 ZX Shipping. All Rights Reserved.</span>
+            <span lang="fr">&copy; 2025 ZX Shipping. Tous Droits Réservés.</span>
+            <span lang="ht">&copy; 2025 ZX Shipping. Tout Dwa Rezève.</span>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const menuBtn = document.querySelector('.menu-btn');
-        const navMenu = document.querySelector('nav ul');
-        
-        menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu after click
-                    navMenu.classList.remove('active');
-                }
-            });
-        });
-        
-        // Header Scroll Effect
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.style.padding = '10px 0';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.padding = '20px 0';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-        
-        // Animate elements on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.service-card, .feature-item, .testimonial-slide');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-        
-        // Apply initial styles for animation
-        document.querySelectorAll('.service-card, .feature-item, .testimonial-slide').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        });
-        
-        // Call animation function on load and scroll
-        window.addEventListener('load', animateOnScroll);
-        window.addEventListener('scroll', animateOnScroll);
-    </script>
+    <script src="js/data.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/features.js"></script>
+    <script src="js/steps.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/testimonials.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
